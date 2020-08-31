@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <title></title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="../css/show.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="margin: auto;font-size: 1.2em;">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="ghada.html">Ghada</a>
+              <a class="dropdown-item" href="islam.html">Islam</a>
+              <a class="dropdown-item" href="ahmed.html">Ahmed</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+  </div>
+
+  <!--start product view-->
+  <div class="container m-5">
+    <div class="row product-box">
+      <div class="col-md-6 product-img">
+        <img src="laptop.jpg" class="productImg" id="productImg">
+      </div>
+      <div class="col-md-6 product-desc">
+        <h4>Accessories</h4>
+        <h2 id="productName"></h2>
+        <h2 class="price">$ <span id="productPrice"></span></h2>
+        <hr>
+        <p id="productDescription">
+
+        </p>
+        <hr>
+        <div class="option">
+          <h4>QTY</h4>
+          <input type="text" value="1" name="quantity" id="quantity" class="quanity form-control" oninput="if (this.value<1) this.value=1 ">
+          <div class="count">
+            <button class="count-up btn btn-default" type="button" style="border-bottom: 0;">+</button>
+            <button class="count-down btn btn-default" type="button">-</button>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <button class="productIdButton btn btn-rounded btn-block add-to-cart">add to cart</button>
+      </div>
+    </div>
+    <div id="allCheckout" class="TotalButton">
+      <div id="total-view" class="numberItem" style="display: inline-block"></div>
+      <div id="checkout" class="fa fa-shopping-cart" style="display: inline-block"></div>
+    </div>
+  </div>
+  <!--end product view-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $(".count-up").click(function () {
+        $("input.quanity").val(+$("input").val() + 1);
+      });
+
+      $(".count-down").click(function () {
+        if (+$("input").val() >1) {
+          $("input.quanity").val(+$("input").val() - 1)
+        }
+
+      });
+    });
+  </script>
+  <script src="../javascript/view_item.js"></script>
+</body>
+
+</html>
